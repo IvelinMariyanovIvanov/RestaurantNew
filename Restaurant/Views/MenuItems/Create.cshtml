@@ -127,7 +127,12 @@
     <script src="~/js/category.js"></script>
     <script type="text/javascript">
 
-
+    //$(document).ready(function(){
+    //    //getSubCategory();
+    //    $('#CategoryId').change(function () {
+    //        getSubCategory();
+    //    })
+    //});
 
     //function getSubCategory() {
 
@@ -162,6 +167,31 @@
     //    $("#CategoryId").val(categoryId);
     //    $("#SubCategoryId").val(subCategoryId);
     //}
+
+    @*function getSubCategory() {
+        //var selectedItem = $(this).val();
+       
+        var selecteCategoryId = $('#CategoryId').val();
+        var subCategory = $("#SubCategoryId");
+
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: '@Url.Action("GetSubCategory", "MenuItems")',
+            data: { "categoryId": selecteCategoryId },
+            success: function (data) {
+                subCategory.html('');
+                $.each(data, function (id, option) {
+                    subCategory.append($('<option></option>').val(option.value).html(option.text));
+                });
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+
+            }
+        });
+    }*@
 
 
 
