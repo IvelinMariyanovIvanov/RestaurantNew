@@ -1,0 +1,15 @@
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.MVC.deps.json
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.MVC.runtimeconfig.json
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.MVC.runtimeconfig.dev.json
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.MVC.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.MVC.pdb
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.csproj.CoreCompileInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.AssemblyInfoInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.AssemblyInfo.cs
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.pdb
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.Domain.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\bin\Debug\netcoreapp2.0\Restaurant.Domain.pdb
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.csprojAssemblyReference.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant\obj\Debug\netcoreapp2.0\Restaurant.MVC.csproj.CopyComplete

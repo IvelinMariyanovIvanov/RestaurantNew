@@ -1,0 +1,8 @@
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\bin\Debug\netcoreapp2.1\Restaurant.DAL.deps.json
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\bin\Debug\netcoreapp2.1\Restaurant.DAL.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\bin\Debug\netcoreapp2.1\Restaurant.DAL.pdb
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\obj\Debug\netcoreapp2.1\Restaurant.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\obj\Debug\netcoreapp2.1\Restaurant.DAL.AssemblyInfoInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\obj\Debug\netcoreapp2.1\Restaurant.DAL.AssemblyInfo.cs
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\obj\Debug\netcoreapp2.1\Restaurant.DAL.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.DAL\obj\Debug\netcoreapp2.1\Restaurant.DAL.pdb

@@ -1,0 +1,209 @@
+﻿@model Restaurant.MVC.ViewModels.MenuItemVm
+
+@using Restaurant.Domain
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+
+    <h2>Create a menu item</h2>
+    <hr />
+    <br />
+
+
+    <div class="container">
+        <div class="row">
+            <div class="border col-6">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="row border">
+
+                        <div class="container-fluid">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            @*<input hidden asp-for="MenuItem.CategoryId" />
+                                <input hidden asp-for="MenuItem.SubCategoryId" />*@
+
+                            <div class="form-group row">
+                                <div class="col-4">
+
+                                    <label asp-for="MenuItem.Name" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+
+                                    <input asp-for="MenuItem.Name" class="form-control" />
+                                    <span asp-validation-for="MenuItem.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="MenuItem.Description" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="MenuItem.Description" class="form-control" />
+                                    <span asp-validation-for="MenuItem.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="MenuItem.Price" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="MenuItem.Price" class="form-control" />
+                                    <span asp-validation-for="MenuItem.Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="MenuItem.Image" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="file" name="files" multiple class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="CategoryId" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    @*MenuItem.CategoryId*@
+                                    <select asp-for="CategoryId"
+                                            asp-items="@Model.CategoryCollection" onchange="getSubCategory()" class="form-control" id="CategoryId" name="CategoryId"></select>
+                                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="SubCategoryId" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    @*MenuItem.SubCategoryId*@
+                                    <select asp-for="SubCategoryId"
+                                            asp-items="@Model.SubCategoryCollection"
+                                            class="form-control" id="SubCategoryId" name="SubCategoryId"></select>
+                                    <span asp-validation-for="SubCategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="MenuItem.SpicyType" class="form-control"></label>
+                                </div>
+                                <div class="col-8">
+                                    <select asp-for="MenuItem.SpicyType"
+                                            asp-items="@Html.GetEnumSelectList<Spicy>()"
+                                            class="form-control">
+                                        @*<option> -- Please select a spicy -- </option>*@
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" id="submitForm" />
+                                <a asp-action="Index" class="btn btn-success ml-2">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+
+    </script>
+
+
+
+    <script src="~/js/category.js"></script>
+    <script type="text/javascript">
+
+    //$(document).ready(function(){
+    //    //getSubCategory();
+    //    $('#CategoryId').change(function () {
+    //        getSubCategory();
+    //    })
+    //});
+
+    //function getSubCategory() {
+
+    //    var url =  "/MenuItems/GetSubCategory";
+
+    //    var selectedCategoryIdEl = $("#CategoryId");
+    //    //var selectedCategoryId =  $('#CategoryId :selected').val();
+    //                                   //selectedCategoryId
+    //    $.getJSON(url, { categoryId: $(selectedCategoryIdEl).val() }, function (subCategoriesfromDb) {
+
+    //        var items = '';
+
+    //        $("#SubCategoryId").empty();
+
+    //        $.each(subCategoriesfromDb, function (i, subcategory) {
+    //            items += "<option value='" + subcategory.value + "'>" + subcategory.text + "</option>";
+    //        });
+
+    //        $('#SubCategoryId').html(items);
+    //    })
+    //}
+
+
+    //$("#submitForm").click(function () {
+    //    submitForm();
+    //});
+
+    //function submitForm() {
+    //    var categoryId = $('#CategoryId :selected').val();
+    //    var subCategoryId = $('#SubCategoryId :selected').val();
+
+    //    $("#CategoryId").val(categoryId);
+    //    $("#SubCategoryId").val(subCategoryId);
+    //}
+
+    @*function getSubCategory() {
+        //var selectedItem = $(this).val();
+       
+        var selecteCategoryId = $('#CategoryId').val();
+        var subCategory = $("#SubCategoryId");
+
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: '@Url.Action("GetSubCategory", "MenuItems")',
+            data: { "categoryId": selecteCategoryId },
+            success: function (data) {
+                subCategory.html('');
+                $.each(data, function (id, option) {
+                    subCategory.append($('<option></option>').val(option.value).html(option.text));
+                });
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+
+            }
+        });
+    }*@
+
+
+
+    </script>
+</body>
+</html>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+

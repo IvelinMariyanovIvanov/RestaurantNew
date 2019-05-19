@@ -1,0 +1,77 @@
+﻿@*@model Restaurant.Models.ApplicationUser*@
+@model Restaurant.MVC.ViewModels.UserLockVm
+
+@{
+    ViewData["Title"] = "Lock";
+}
+
+<h2 class="text-info">Lock @Model.FirstName @Model.LastName</h2>
+
+
+<div class="border">
+    <div>
+        <form asp-action="Lock">
+            <input asp-for="Id" hidden />
+            <input asp-for="LockUpEnd" hidden />
+            <input asp-for="LockUpReason" hidden />
+            <input asp-for="FirstName" hidden />
+            <fieldset disabled>
+                <div class="form-group row mt-2">
+                    <div class="col-2">
+                        <label asp-for="FirstName" class="control-label m-2"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="FirstName" class="form-control" name="FirstName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="LastName" class="control-label m-2"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="LastName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="Email" class="control-label m-2"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Email" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="PhoneNumber" class="control-label m-2"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="PhoneNumber" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="LockUpEnd" class="control-label m-2"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="LockUpEnd" class="form-control" id="datepicker" type="date" name="LockUpEnd" />
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="LockUpReason" class="control-label m-2" ></label>
+                </div>
+                <div class="col-4">
+                    <textarea asp-for="LockUpReason" class="form-control" style="height:100px;" name="LockUpReason"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row m-2">
+                <a asp-action="Index" class="btn btn-outline-success ">Back</a>
+                <input type="submit" value="Lock" class="btn btn-outline-danger ml-2" data-toggle="tooltip" data-placement="right" title="Lock for one year"/>
+            </div>
+        </form>
+    </div>
+</div>

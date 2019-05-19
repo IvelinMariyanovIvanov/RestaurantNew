@@ -1,0 +1,32 @@
+﻿
+@model Restaurant.Domain.Order
+
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<br />
+
+<h2>Order Confirm</h2>
+
+<br />
+
+@if (Model != null)
+{
+    <div>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-info">Add Another Order</a>
+
+        <div class="col-12">
+            @Html.Partial("_OrderDetailsPartialView", Model)
+        </div>
+    </div>
+
+
+}
+else
+{
+    <div class="text-danger">
+        Error. Please try again
+    </div>
+}
+

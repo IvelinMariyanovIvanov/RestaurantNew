@@ -1,0 +1,9 @@
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\bin\Debug\netcoreapp2.1\Restaurant.Domain.deps.json
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\bin\Debug\netcoreapp2.1\Restaurant.Domain.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\bin\Debug\netcoreapp2.1\Restaurant.Domain.pdb
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.csprojAssemblyReference.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.AssemblyInfoInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.AssemblyInfo.cs
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.dll
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Domain\obj\Debug\netcoreapp2.1\Restaurant.Domain.pdb

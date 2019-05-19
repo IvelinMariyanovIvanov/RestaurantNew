@@ -1,0 +1,119 @@
+﻿
+@model Restaurant.MVC.ViewModels.HomeVm
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+
+
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+
+
+
+@*<form class="form-inline">
+        <div class="form-group mb-2">
+            <input asp-for="Category" type="text" class="form-control" placeholder="Category" >
+        </div>
+
+        <div class="form-group mx-sm-3 mb-2">
+            <input asp-for="SubCategory" type="text" class="form-control" placeholder="Sub Category" >
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>*@
+
+<div>
+    <form class="form-inline">
+        <div class="form-group ">
+
+            <select asp-for="CategoryId"
+                    asp-items="@Model.CategoryDropDownList"
+                    class="form-control" id="CategoryId" name="CategoryId"></select>
+        </div>
+
+        <div class="form-group mx-sm-3">
+            <select asp-for="SubCategoryId"
+                    asp-items="@Model.SubCategoryDropDownList"
+                    class="form-control" id="SubCategoryId" name="SubCategoryId"></select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+
+<br />
+
+<div class="row content" style="background-color:lightgray">
+
+    @foreach (var menuItem in Model.MenuItems)
+    {
+
+        @*<div class="row" style="padding-bottom:10px">
+                @Html.Partial("_MenuItempartial", menuItem)
+            </div>*@
+
+        @*<div  style="padding-bottom:10px">
+
+                <div class="column col-4">
+                    @Html.Partial("_MenuItremCardPartial", menuItem)
+                </div>
+
+            </div>*@
+
+
+        @*<div class="col-4 mb-3 myItem">
+
+            </div>*@
+
+
+        @*<div class="myItem ">
+                @Html.Partial("_MenuItremCardPartial", menuItem)
+            </div>*@
+        @Html.Partial("_MenuItremCardPartial", menuItem)
+
+    }
+</div>
+
+<script src="~/css/showMore.js"></script>
+@*<script>
+    $(document).ready(function () {
+        // Configure/customize these variables.
+        var showChar = 100;  // How many characters are shown by default
+        var ellipsestext = "...";
+        var moretext = "Show more >";
+        var lesstext = "Show less";
+
+
+        $('.more').each(function () {
+            var content = $(this).html();
+
+            if (content.length > showChar) {
+
+                var c = content.substr(0, showChar);
+                var h = content.substr(showChar, content.length - showChar);
+
+                var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+                $(this).html(html);
+            }
+
+        });
+
+        $(".morelink").click(function () {
+            if ($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+    });
+</script>*@
+

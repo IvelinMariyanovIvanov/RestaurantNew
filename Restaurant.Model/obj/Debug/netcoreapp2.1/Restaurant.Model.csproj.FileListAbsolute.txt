@@ -1,0 +1,4 @@
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Model\obj\Debug\netcoreapp2.1\Restaurant.Model.csprojAssemblyReference.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Model\obj\Debug\netcoreapp2.1\Restaurant.Model.csproj.CoreCompileInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Model\obj\Debug\netcoreapp2.1\Restaurant.Model.AssemblyInfoInputs.cache
+D:\Projects\uDemy\ASP.NET_CORE\RestauranAgain\Restaurant\Restaurant.Model\obj\Debug\netcoreapp2.1\Restaurant.Model.AssemblyInfo.cs

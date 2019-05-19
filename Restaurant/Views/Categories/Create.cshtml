@@ -1,0 +1,147 @@
+﻿@*@model Restaurant.Domain.Category*@
+
+@model Restaurant.MVC.ViewModels.CategoryVm
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h2>Create Category</h2>
+
+<hr />
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+
+@*<form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row col-6 border">
+            <div class="form-group  mt-3 ml-3 col-6">
+
+                <input type="text" asp-for="Name" id="searchInput" required />
+
+
+                <label asp-for="Name"></label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group row ml-3 col-6">
+
+                <input asp-for="CategoryOrder" type="text" required />
+
+                <label asp-for="CategoryOrder" class="control-label m-2"></label>
+
+                <span asp-validation-for="CategoryOrder" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row  ">
+
+                <div class="col-6 text-left ">
+                    <a asp-action="Index" class="btn btn-success ml-2">Back to List</a>
+                </div>
+
+                <div class="col-6 text-right ">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+
+            </div>
+        </div>
+
+    </form>*@
+
+
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    @*<div class="panel panel-default">
+        <div class="panel-heading">Panel Heading</div>
+        <div class="panel-body">Panel Content</div>
+    </div>*@
+
+    <div class="row border m-3 col-6">
+
+        <div class="border container m-3">
+
+            <div class="form-group row  m-3 col-12">
+
+                <label asp-for="Name" class="col-4 mt-2 text-left "></label>
+
+                <div class="col-8">
+
+                    <input asp-for="Name" class="form-control " />
+
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row m-3 col-12">
+
+                <label asp-for="CategoryOrder" class="col-4 mt-2"></label>
+
+                <div class="col-8 ">
+
+                    <input asp-for="CategoryOrder" class="form-control" />
+
+                    <span asp-validation-for="CategoryOrder" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row container col-12 m-3">
+
+                <a asp-action="Index" class="btn btn-success col-4 ">Back to List</a>
+
+
+
+                <div class="col-8 text-right ">
+                    <input type="submit" value="Create" class="btn btn-info col-12" />
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+
+
+    $("#searchInput").autocomplete({
+                    source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetCategory", "Categories")',
+                         //url: "/Categories/GetCategory",
+                        dataType: "json",
+                        data: { categoryName: $("#searchInput").val() },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                //return { label: item.Name, value: item.Name };
+                                return { label: item.label, value: item.label };
+                            }));
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error");
+                        }
+                    });
+        }
+            });
+</script>
+

@@ -1,0 +1,92 @@
+﻿@model Restaurant.Domain.MenuItem
+
+
+
+
+
+<div class="col-3 mt-2 mb-2 card-group">
+
+    <div class="card myItem">
+
+    <div class="text-center mt-2">
+        <img class="card-img-top" src="@Model.Image" alt="@Model.Image" style="width:80%">
+
+        @*<span class="price">@Model.Price</span>*@
+    </div>
+
+    @*<div class="text-center mt-3">
+            <img src="@Model.Image" alt="@Model.Image" style="width:80%">
+        </div>*@
+
+    <div class="card-body">
+        @*<div class="text-info">*@
+            <p >
+                <h4 class="text-info">@Model.Name</h4>
+            </p>
+            <p  >
+               
+                    <h4 class=" @*text-right*@ text-danger">
+                        <strong> @Model.Price</strong>
+                    </h4>
+              
+            </p>
+        @*</div>*@
+
+        @*<div>
+            <p>
+                <h2 class="text-info ">
+                    @Model.Name
+                </h2>
+            </p>
+        </div>*@
+
+        <h2> @Model.Category.Name</h2>
+
+        <p class="title scratch">@Model.SubCategory.Name</p>
+
+        @if (Model.SpicyType.ToString() == "NA")
+        {
+            <label class="badge badge-info">
+                @Model.SpicyType
+            </label>
+        }
+        @if (Model.SpicyType.ToString() == "Spicy")
+        {
+            <label class="badge badge-warning">
+                @Model.SpicyType
+            </label>
+        }
+        @if (Model.SpicyType.ToString() == "VerySpicy")
+        {
+            <label class="badge badge-danger">
+                @Model.SpicyType
+            </label>
+        }
+
+        <div class="more">
+            @Model.Description
+        </div>
+
+        @*<p>
+
+        </p>*@
+
+        @*<div>
+            @Model.Description
+        </div>*@
+
+        @*<div class="mb-3">
+
+            <a asp-action="Add" class="button btn-outline-info" asp-route-id="@Model.Id">Add</a>
+        </div>*@
+
+    </div>
+
+    <div class="card-footer">
+        <a asp-action="Add" class="button btn-outline-info" asp-route-id="@Model.Id" style="text-decoration:none">Add</a>
+    </div>
+</div>
+</div>
+
+
+

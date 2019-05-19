@@ -1,0 +1,117 @@
+﻿@model Restaurant.MVC.ViewModels.SubCategoryVm
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<h2>Edit</h2>
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h2>Edit SubCategory</h2>
+
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+
+<div class="row container">
+    <div class="col-8 border">
+        <form asp-action="Edit" class="mt-5 ">
+
+            <input hidden asp-for="SubCategory.Category.Name" />
+            @*<input hidden asp-for="CategorySelectList" />
+            <input hidden asp-for="SubCategoryNamesList" />*@
+
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="@Model.CategoryId"></label>
+                </div>
+                <div class="col-5">
+                    <select @*asp-for="@Model.SubCategory.CategoryId"*@
+                            asp-for="@Model.CategoryId"
+                            asp-items="@Model.CategorySelectList" class="form-control" id="selectedCategory">
+                        @*<option>Please select Category</option>*@
+                    </select>
+                    <span asp-validation-for="@Model.SubCategory.CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="SubCategory.Name"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="SubCategory.Name" class="form-control" id="searchInput" />
+                    <span asp-validation-for="SubCategory.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-5">
+                </div>
+                <div class="col-3 text-right">
+                    <a asp-action="Index" class="btn btn-success">Back</a>
+                    <input type="submit" value="Update" class="btn btn-primary " />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-4">
+        @if (Model.SubCategoryNamesList.Count > 0)
+        {
+            <p>Existing SubCategories: </p>
+            @foreach (var item in Model.SubCategoryNamesList)
+            {
+                <input asp-for="@item" disabled class="form-control" />
+                <p>
+
+                </p>
+            }
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+
+     $("#selectedCategory").change(function () {
+                    $("#searchInput").val("");
+                });
+
+      
+ $("#searchInput").autocomplete({
+                    source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetSearchValue", "SubCategories")',
+                        //url: "/SubCategories/GetSearchValue",
+                        dataType: "json",
+                        data: { search: $("#searchInput").val(), categoryId: $('#selectedCategory :selected').val() },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                //return { label: item.Name, value: item.Name };
+                                return { label: item.label, value: item.label };
+                            }));
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error");
+                        }
+                    });
+        }
+            });
+</script>
